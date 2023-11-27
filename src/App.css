@@ -4,16 +4,80 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  background-image: url(./images/background.jpeg);
+  background-size: cover;
+}
+
 .container {
   height: 100vh;
   width: 100vw;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 1.6rem;
   color: #75d7ca;
-  background-color: black;
   font-family: "Oxanium";
+}
+
+.titles {
+  display: flex;
+  flex-direction: column;
+  animation: shake 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(0.1rem, 0.1rem) rotate(0deg); }
+  10% { transform: translate(-0.1rem, -0.2rem) rotate(-1deg); }
+  20% { transform: translate(-0.3rem, 0rem) rotate(1deg); }
+  30% { transform: translate(0.3rem, 0.2rem) rotate(0deg); }
+  40% { transform: translate(0.1rem, -0.1rem) rotate(1deg); }
+  50% { transform: translate(-0.1rem, 0.2rem) rotate(-1deg); }
+  60% { transform: translate(-0.3rem, 0.1rem) rotate(0deg); }
+  70% { transform: translate(0.3rem, 0.1rem) rotate(-1deg); }
+  80% { transform: translate(-0.1rem, -0.1rem) rotate(1deg); }
+  90% { transform: translate(0.1rem, 0.2rem) rotate(0deg); }
+  100% { transform: translate(0.1rem, -0.2rem) rotate(-1deg); }
+}
+
+.title{
+  font-size: 4.8rem;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(
+    #e13a20 15%,
+    #ef6a35 25%,
+    #f7ab6c 35%,
+    #f8e0b3 45%,
+    #87ada5 55%,
+    #288a99 65%,
+    #1b6c8e 75%,
+    #333599 85%,
+    #262873 90%
+  );
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 0.1rem #75d7ca;
+  filter: drop-shadow(0.1rem 0.3rem 0rem #0d0c27)
+  drop-shadow(0.1rem 0.3rem 0rem #e13a20)
+  drop-shadow(0.1rem 0.3rem 0rem #f7ab6c)
+  drop-shadow(0.1rem 0.3rem 0rem #87ada5)
+  drop-shadow(0.1rem 0.3rem 0rem #1b6c8e)
+  drop-shadow(0rem 0rem 1rem #262873)
+}
+
+.subtitle {
+  font-weight: 800;
+  align-self: flex-end;
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+  font-size: 3.2rem;
+  transform: rotateZ(-10deg);
+  color: #ff05b4;
+  text-shadow: -0.2rem -0.3rem yellow, 0.3rem 0.3rem blue;
 }
 
 .passwordForm {
@@ -21,10 +85,10 @@ html {
   flex-direction: column;
   height: 30rem;
   width: 50rem;
-  background-color: inherit;
+  background-color: black;
   border-radius: 1.2rem;
   padding: 2.4rem;
-  border: 2px solid #75d7ca;
+  border: 0.1rem solid #75d7ca;
 }
 
 .errorDisplayed {
@@ -40,24 +104,55 @@ html {
   justify-content: space-between;
 }
 
-.length input {
+input[type=number] {
   width: 4.8rem;
   font-family: "Oxanium";
+  background-color: black;
+  color: #75d7ca;
+  border: 0.1rem solid #75d7ca;
+  text-align: center;
+}
+
+input[type=number]:focus {
+  outline: none;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
 
 .radioButtons {
   display: flex;
   flex-direction: column;
   margin-top: 3.2rem;
+  gap: 0.8rem;
 }
 
 .radioButtons p {
   margin: 0;
 }
 
-button {
-  width: 15rem;
-  margin-top: 1.2rem;
+input[type="checkbox"] {
+  outline: 0.1rem solid #75d7ca;
+  accent-color: black;
+}
+
+.buttons {
+  display: flex;
   align-self: flex-end;
+  gap: 0.8rem;
+}
+
+button {
+  height: 3.2rem;
+  margin-top: 1.2rem;
   font-family: "Oxanium";
+  background-color: inherit;
+  color: #75d7ca;
+  border: 0.1rem solid #75d7ca;
+  cursor: pointer;
+}
+
+.errorBorder {
+  border: 0.1rem solid red !important;
 }
